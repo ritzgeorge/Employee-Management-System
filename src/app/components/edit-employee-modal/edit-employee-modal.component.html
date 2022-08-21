@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>Edit Employee Details </h1>
+<div mat-dialog-content>
+<!-- Form for edit -->
+  <form [formGroup]="edit_employee_form">
+    <div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Department</mat-label>
+          <input matInput formControlName="department" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Blood Group</mat-label>
+          <input matInput formControlName="bloodgroup" />
+        </mat-form-field>
+        <div>
+          <table>
+            <tbody>
+              <tr formArrayName="address_array" *ngFor="let address of address_array?.controls; index as i">
+                <td style="width: 85%;">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Address {{i+1}}</mat-label>
+                    <input matInput [formControl]="address.get('address')" />
+                    <mat-error *ngIf="address.get('address').hasError('required')"> * Address is required
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tbody>
+              <tr formArrayName="number_array" *ngFor="let number of number_array?.controls; index as i">
+                <td style="width: 80%;">
+                  <mat-form-field appearance="outline" style="width: 80%;">
+                    <mat-label>Mobile Number {{i+1}}</mat-label>
+                    <input matInput [formControl]="number.get('number')" />
+                    <mat-error *ngIf="number.get('number').hasError('required')"> * Number required
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="text-align: end;">
+        <button type="button" mat-stroked-button color="warn" [mat-dialog-close]="true">
+          Close
+        </button>
+        <button type="submit" mat-stroked-button color="primary" [mat-dialog-close]="true"
+          (click)="onEditEmployeeSubmit()" style="margin-left: 0.5rem;">
+          Edit
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>
