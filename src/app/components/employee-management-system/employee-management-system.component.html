@@ -27,37 +27,37 @@
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
 
-          <!-- Weight Column -->
+          <!-- Age Column -->
           <ng-container matColumnDef="age">
             <th mat-header-cell *matHeaderCellDef> Age </th>
             <td mat-cell *matCellDef="let element"> {{element.age}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Department Column -->
           <ng-container matColumnDef="department">
             <th mat-header-cell *matHeaderCellDef> Department </th>
             <td mat-cell *matCellDef="let element"> {{element.department}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Bloodgroup Column -->
           <ng-container matColumnDef="bloodgroup">
             <th mat-header-cell *matHeaderCellDef> Bloodgroup </th>
             <td mat-cell *matCellDef="let element"> {{element.bloodgroup}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Address Column -->
           <ng-container matColumnDef="address">
             <th mat-header-cell *matHeaderCellDef> Address </th>
             <td mat-cell *matCellDef="let element"> {{getAllAddresses(element.address_array)}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Number Column -->
           <ng-container matColumnDef="number">
             <th mat-header-cell *matHeaderCellDef> Number </th>
             <td mat-cell *matCellDef="let element"> {{getAllNumbers(element.number_array)}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
+          <!-- Action Column -->
           <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef> </th>
             <td mat-cell *matCellDef="let element">
